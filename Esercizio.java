@@ -1,26 +1,51 @@
-//LEGGERE LE ISTRUZIONI NEL FILE README.md
-
-//Import di Classi Java necessarie al funzionamento del programma
-import java.util.Scanner;
-
 // Classe principale, con metodo main
 class Esercizio {
     // Il programma parte con una chiamata a main().
-    public static void main(String args[])
-    {
-        //Variabili del programma
-        String nome;
+    public static void main(String args[]){
+        Lista<String> rubrica = new Lista<>();
+        
+        System.out.println("=== RUBRICA CONTATTI ===");
+        
+        rubrica.aggiungiInTesta("juan");
+        rubrica.aggiungiInCoda("bajuan");
+        rubrica.aggiungiInCoda("mcheil");
+        rubrica.aggiungiInTesta("bamcheil");
+        rubrica.aggiungiInPosizione("toninio", 2);
+        
+        System.out.println("lista iniziale:");
+        System.out.println(rubrica);
+        System.out.println("dimensione: " + rubrica.size());
+        
+        String cercato = "lello";
+        int posizione = rubrica.indiceDi(cercato);
+        System.out.println("posizione di " + cercato + ": " + posizione);
+        
+        System.out.println("contatto 1: " + rubrica.leggiTesta());
+        System.out.println("ultimo contatto: " + rubrica.leggiCoda());
+        System.out.println("contatto posizione 2: " + rubrica.leggiInPosizione(2));
+        
+        System.out.println("rimuovo tonino");
+        rubrica.cancella("tonino");
+        System.out.println(rubrica);
+        
+        System.out.println("rimuovo posizione 1");
+        String rimosso = rubrica.cancellaInPosizione(1);
+        System.out.println("rimosso: " + rimosso);
+        System.out.println(rubrica);
 
-        //Creo l'oggetto in per l'input da tastiera
-        Scanner in = new Scanner( System.in );
-
-        //Leggo l'input da tastiera
-        System.out.print("Inserisci il tuo nome: ");
-        nome = in.nextLine();
-
-        //Output del nome acquisito da tastiera
-        System.out.println("Ciao "+nome+"!");
+        System.out.println("contiene 'mcheil'? " + rubrica.contiene("Alice"));
+        System.out.println("Contiene 'tonino'? " + rubrica.contiene("Bob"));
+        
+        System.out.println("dimensione finale: " + rubrica.size());
+        System.out.println("lista vuota? " + rubrica.isEmpty());
+        
+        Lista<String> altriContatti = new Lista<>();
+        altriContatti.aggiungiInCoda("pino");
+        altriContatti.aggiungiInCoda("ugo");
+        
+        System.out.println("aggiungo altri contatti");
+        rubrica.concatena(altriContatti);
+        System.out.println(rubrica);
+        System.out.println("dimensione finale: " + rubrica.size());
     }
 }
-
-//LEGGERE LE ISTRUZIONI NEL FILE README.md

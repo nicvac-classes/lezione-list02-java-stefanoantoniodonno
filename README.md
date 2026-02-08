@@ -78,7 +78,7 @@ Crea la classe `Lista<T>` nel file `Lista.java` con la struttura base.
 <summary>Soluzione</summary>
 
 ```java
-public class Lista<T> {
+pblic class Lista<T> {
     private Nodo<T> head;
 
     public Lista() {
@@ -104,7 +104,7 @@ Verificare se la lista è vuota.
 | `boolean isEmpty()` | Restituisce `true` se la lista non contiene nodi |
 | `head == null` | Condizione che indica lista vuota |
 
-### Come funziona
+### Comue funziona
 
 ```
 Lista vuota:
